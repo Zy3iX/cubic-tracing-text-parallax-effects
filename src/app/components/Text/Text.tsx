@@ -40,25 +40,32 @@ export default function Text() {
   });
 
   const opacity = useTransform(scrollYProgress, [0, 0.4], [1, 0]);
-  useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    console.log("Считаю скролл!", scrollYProgress);
-    console.log("Прогресс скролла:", latest);
-  });
+
   return (
-    <motion.section ref={container} className="w-full h-[200vh] ">
+    <motion.section ref={container} className="w-full h-[200svh] ">
       <motion.section
         style={{ opacity: opacity }}
-        className={`${regular.className} justify-self-start sticky top-[20%] flex flex-col items-center mix-blend-difference text-lg md:text-6xl text-white  uppercase`}
+        className={`${regular.className} justify-self-start sticky top-[20%] flex flex-col items-center mix-blend-difference text-[clamp(1.5rem,4vw,3rem)] md:text-[4rem, 6vw, 8rem] leading-tight text-white  uppercase`}
       >
         <p>
-          <span className={`${italic.className} text-3xl md:text-8xl `}>A</span>
+          <span
+            className={`${italic.className} text-[clamp(2.2rem,4vw,4rem)] md:text-[clamp(2rem,6vw,4.4rem)] `}
+          >
+            A
+          </span>
           khmetov
-          <span className={`${italic.className} text-3xl md:text-8xl `}>I</span>
+          <span
+            className={`${italic.className} text-[clamp(2.2rem,4vw,4rem)] md:text-[clamp(2rem,6vw,4.4rem)] `}
+          >
+            I
+          </span>
           skander
         </p>
         <p>selftaught front end</p>
         <p>
-          <span className={`${pixelated.className} text-2xl md:text-7xl `}>
+          <span
+            className={`${pixelated.className} text-[clamp(2rem,5vw,4rem)]`}
+          >
             Developer
           </span>
         </p>
